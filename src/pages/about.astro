@@ -1,0 +1,71 @@
+---
+const pageTitle = "Sobre mi";
+
+const identity = {
+  firstName: "Alex",
+  country: "Uruguay",
+  occupation: "docente de Historia",
+  hobbies: ["informática", "programación web", "peñarol"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "Redacción de documentos"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+---
+
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+        <a href="/">Inicio</a>
+        <a href="/about">Sobre mí</a>
+        <a href="/blog">Blog</a>
+
+
+		<h1>{pageTitle}</h1>
+        <p>¡Hola! Soy <strong>{identity.firstName}</strong>, un {identity.occupation} con 23 años de edad, actualmente estoy inmerso en el fascinante mundo de la informática, específicamente en el desarrollo FrontEnd. Este repositorio es mi espacio personal donde comparto recursos, proyectos y todo lo relacionado con mi viaje educativo y tecnológico.
+        </p>
+            <h2>Sobre Mí</h2>
+                <p>
+                    <ul>
+                        <li>🌎 Soy uruguayo, apasionado por la historia, la cultura y la informática.</li>
+                        <li>📚 Docente de Historia, compartiendo conocimientos con entusiasmo.</li>
+                        <li>💻 Estudiante del Profesorado de Cs. de la Computación, explorando el vasto universo tecnológico.</li>
+                        
+                    </ul>
+                 </p>
+<section>
+                 <p>He aquí otros datos sobre mí:</p>
+                 <ul>
+                   <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+                   {identity.hobbies.length >= 2 &&
+                     <li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+                   }
+                 </ul>
+                 <p>Mis habilidades son:</p>
+                 <ul>
+                   {skills.map((skill) => <li>{skill}</li>)}
+                 </ul>
+</section>
+
+{happy && <p>¡Estoy feliz de aprender Astro!</p>}
+
+{finished && <p>¡He terminado este tutorial!</p>}
+
+{goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+
+</body>
+</html>
+<style>
+	ul {
+		list-style-type: none;
+	}
+</style>

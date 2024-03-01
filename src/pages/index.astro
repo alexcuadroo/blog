@@ -1,22 +1,25 @@
 ---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 const pageTitle = "Inicio";
 ---
 
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/webp" href="/faviconB.webp" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Inicio</a>
-		<a href="/about">Sobre mí</a>
-		<a href="/blog">Blog</a>
-
+		<Header />
 		<h1>{pageTitle}</h1>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates id quasi inventore ex magni quisquam optio ipsa dolore repudiandae <br>impedit repellat nulla aperiam minima, perspiciatis maxime voluptatum nesciunt delectus dolorum.</p>
-	
+		<Footer />
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>
